@@ -1,0 +1,68 @@
+/*
+ * Build script for: NewPostfixEvaluate
+ *
+ * Created: Wed 26 Oct 15:28:08 BST 2016
+ *
+ */
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+version = '1.0.0'
+group = 'com.steel_eyed.NewPostfixEvaluate'
+description = "\n${name} Project\nVersion: ${version}"
+mainClassName = "com.steel_eyed.NewPostfixEvaluate.Main"
+
+/*
+ * Use filesystem as local repositories.
+ *
+ */
+repositories {
+    flatDir {
+        name 'localRepository'
+    }
+}
+
+repositories {
+     localRepository {
+         dirs ( '/usr/share/java',
+	        '/usr/share/java/slf4j',
+	        '/usr/share/java/hamcrest',
+	        '/opt/mine' )
+     }
+}
+
+// uploadArchives {
+//     repositories {
+//        flatDir {
+//            dirs 'repos'
+//        }
+//     }
+// }
+
+task listJars << {
+    configurations.compile.each { File file -> println file.name }
+}
+
+task showCache << {
+	configurations.compile.each { println it }
+}
+
+dependencies {
+	compile ( [ group: 'org.apache.log4j', name: 'log4j', version: '1.2.17' ],
+                  [ group: 'org.slf4j', name: 'slf4j-api', version: '1.7.18' ],
+		  [ group: 'com.steel_eyed.General', name: 'libGeneral', version: '1.0.+' ] )
+	testCompile ( [ group: 'org.junit', name: 'junit', version: '4.+' ],
+                      [ group: 'org.hamcrest', name: 'core', version: '1.3-13' ] )
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'NewPostfixEvaluate',
+                   'Implementation-Version': version,
+       		   'Main-Class': mainClassName,
+       		   'Class-Path': configurations.compile.collect { it }.join(' ')
+    }
+}
