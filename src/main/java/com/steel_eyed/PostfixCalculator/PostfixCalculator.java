@@ -21,26 +21,28 @@ public class PostfixCalculator {
                 continue;
             }
             // Must be an operator
-            long total = calc( numerics.pop(), numerics.pop(), token );
+            long value2 = numerics.pop();
+            long value1 = numerics.pop();
+            long total = calc( value1, token, value2 );
             numerics.push( total );
         }
         return numerics.pop();
     }
 
-    public long calc( long value1, long value2, String operator ) {
+    public long calc( long value1, String operator, long value2 ) {
         long result;
         switch( operator ) {
             case "+":
-                result = value2 + value1;
+                result = value1 + value2;
                 break;
             case "-":
-                result = value2 - value1;
+                result = value1 - value2;
                 break;
             case "*":
-                result = value2 * value1;
+                result = value1 * value2;
                 break;
             case "/":
-                result = value2 / value1;
+                result = value1 / value2;
                 break;
             default:
                 throw new RuntimeException( "Unknown operator: " + operator );
