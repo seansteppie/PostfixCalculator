@@ -21,4 +21,19 @@ public class KataTests {
     public void test1() throws Exception {
         assertEquals( 10, eval.evaluate( "2 3 9 4 / + *" ) );
     }
+
+    @Test
+    public void test2() throws Exception {
+        assertEquals( 70, eval.evaluate( "25 45 +" ) );
+    }
+
+    @Test
+    public void test3() throws Exception {
+        assertEquals( 3600, eval.evaluate( "20 40 + 60 *" ) );
+    }
+
+    @Test
+    public void test4() throws Exception {
+        assertEquals( 2000, eval.evaluate( "20 40 60 + *" ) );
+    }
 }
