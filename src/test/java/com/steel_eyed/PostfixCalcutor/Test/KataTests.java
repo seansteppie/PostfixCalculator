@@ -2,7 +2,6 @@ package com.steel_eyed.PostfixCalcutor.Test;
 
 import com.steel_eyed.PostfixCalculator.PostfixCalculator;
 import org.junit.Test;
-import org.junit.Before;
 
 import static org.junit.Assert.assertEquals;
 
