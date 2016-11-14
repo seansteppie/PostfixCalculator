@@ -36,4 +36,9 @@ public class KataTests {
     public void test4() throws Exception {
         assertEquals( 2000, eval.evaluate( "20 40 60 + *" ) );
     }
+
+    @Test
+    public void test5() throws Exception {
+        assertEquals( 1180, eval.evaluate( "20 60 -1 + *" ) );
+    }
 }

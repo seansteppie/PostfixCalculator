@@ -50,11 +50,4 @@ public class PostfixCalculator {
         System.out.println( value1 + " " + operator + " " + value2 + " = " + result );
         return result;
     }
-
-    public static void main( String[] args ) {
-        PostfixCalculator eval = new PostfixCalculator();
-        System.out.println( eval.evaluate( "2 3 9 4 / + *" ) );
-        System.out.println( eval.evaluate( "20 40 + 60 *" ) );
-        System.out.println( eval.evaluate( "20 40 60 + *" ) );
-    }
 }
