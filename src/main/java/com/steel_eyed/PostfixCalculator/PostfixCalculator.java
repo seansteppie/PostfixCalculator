@@ -16,11 +16,13 @@ public class PostfixCalculator {
     public long evaluate( String s ) {
         Stack< Long > numerics = new Stack<>();
         for( String token : s.split( "\\s+" ) ) {
-            if( token.matches( "\\d+" ) ) {
+            if( token.matches( "-*\\d+" ) ) {
                 numerics.push( Long.parseLong( token ) );
                 continue;
             }
             // Must be an operator
+            if( numerics.size() < 2 )
+                throw new RuntimeException( "Not enough operands for operator: " + token );
             long value2 = numerics.pop();
             long value1 = numerics.pop();
             long total = calc( value1, token, value2 );
