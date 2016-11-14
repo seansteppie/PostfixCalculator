@@ -41,4 +41,9 @@ public class KataTests {
     public void test5() throws Exception {
         assertEquals( 1180, eval.evaluate( "20 60 -1 + *" ) );
     }
+
+    @Test( expected = RuntimeException.class )
+    public void test6() throws RuntimeException {
+        eval.evaluate( "10 20 %" );
+    }
 }
