@@ -14,21 +14,21 @@ public class PostfixCalculator {
     }
 
     public long evaluate( String s ) {
-        Stack< Long > numerics = new Stack<>();
+        Stack< Long > operands = new Stack<>();
         for( String token : s.split( "\\s+" ) ) {
             if( token.matches( "-*\\d+" ) ) {
-                numerics.push( Long.parseLong( token ) );
+                operands.push( Long.parseLong( token ) );
                 continue;
             }
             // Must be an operator
-            if( numerics.size() < 2 )
+            if( operands.size() < 2 )
                 throw new RuntimeException( "Not enough operands for operator: " + token );
-            long value2 = numerics.pop();
-            long value1 = numerics.pop();
+            long value2 = operands.pop();
+            long value1 = operands.pop();
             long total = calc( value1, token, value2 );
-            numerics.push( total );
+            operands.push( total );
         }
-        return numerics.pop();
+        return operands.pop();
     }
 
     private long calc( long value1, String operator, long value2 ) {
