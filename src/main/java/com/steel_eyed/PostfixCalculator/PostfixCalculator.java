@@ -47,7 +47,6 @@ public class PostfixCalculator {
             default:
                 throw new RuntimeException( "Unknown operator: " + operator );
         }
-        System.out.println( value1 + " " + operator + " " + value2 + " = " + result );
         return result;
     }
 }
