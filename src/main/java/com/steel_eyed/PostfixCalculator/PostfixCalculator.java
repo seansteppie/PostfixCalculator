@@ -29,7 +29,7 @@ public class PostfixCalculator {
         return numerics.pop();
     }
 
-    public long calc( long value1, String operator, long value2 ) {
+    private long calc( long value1, String operator, long value2 ) {
         long result;
         switch( operator ) {
             case "+":
