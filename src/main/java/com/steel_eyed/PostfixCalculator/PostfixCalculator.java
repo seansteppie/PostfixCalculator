@@ -3,7 +3,7 @@ package com.steel_eyed.PostfixCalculator;
 import java.util.Stack;
 
 /**
- * NewPostfixEvaluate
+ * PostfixCalculator
  * <p>
  * @author Sean Steppie
  * <p>

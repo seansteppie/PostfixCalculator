@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
  * <p>
  * @version 1.0.0        Date: 28/10/16     Initial Version
  */
-public class KataTests {
+public class PostfixCalculatorTests {
     PostfixCalculator eval = new PostfixCalculator();
     /**
      * Test It
