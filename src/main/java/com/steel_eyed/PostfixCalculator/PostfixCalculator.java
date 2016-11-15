@@ -27,10 +27,7 @@ import java.util.Stack;
  * @version 1.0.0        Date: 26/10/16     Initial Version
  */
 public class PostfixCalculator {
-    public PostfixCalculator() {
-    }
-
-    public long evaluate( String s ) {
+    public static long evaluate( String s ) {
         Stack< Long > operands = new Stack<>();
         for( String token : s.split( "\\s+" ) ) {
             if( token.matches( "-*\\d+" ) ) {
@@ -56,7 +53,7 @@ public class PostfixCalculator {
      * @return result long
      * @throws RuntimeException if an invalid operator is passed.
      */
-    private long calc( long value1, String operator, long value2 ) {
+    private static long calc( long value1, String operator, long value2 ) {
         long result;
         switch( operator ) {
             case "+":
