@@ -11,9 +11,9 @@ apply plugin: 'application'
 
 sourceCompatibility = 1.8
 version = '1.0.0'
-group = 'com.steel_eyed.PostfixCalculator'
+group = 'com.steel_eyed.Numeric'
 description = "\n${name} Project\nVersion: ${version}"
-mainClassName = "com.steel_eyed.PostfixCalculator.Main"
+mainClassName = "com.steel_eyed.Numeric.Main"
 
 /*
  * Use filesystem as local repositories.
@@ -60,7 +60,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'PostfixCalculator',
+        attributes 'Implementation-Title': 'Numeric',
                    'Implementation-Version': version,
        		   'Main-Class': mainClassName,
        		   'Class-Path': configurations.compile.collect { it }.join(' ')

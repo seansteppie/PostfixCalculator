@@ -1,9 +1,9 @@
-package com.steel_eyed.PostfixCalculator;
+package com.steel_eyed.Numeric;
 
 import java.util.Stack;
 
 /**
- * PostfixCalculator
+ * Numeric
  * <p>
  * Evaluate a postfix expression
  * <p>

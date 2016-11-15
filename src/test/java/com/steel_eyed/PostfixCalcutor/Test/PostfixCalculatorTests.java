@@ -2,7 +2,7 @@ package com.steel_eyed.PostfixCalcutor.Test;
 
 import org.junit.Test;
 
-import static com.steel_eyed.PostfixCalculator.PostfixCalculator.evaluate;
+import static com.steel_eyed.Numeric.PostfixCalculator.evaluate;
 import static org.junit.Assert.assertEquals;
 
 /**
