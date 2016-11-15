@@ -1,5 +1,5 @@
 /*
- * Build script for: NewPostfixEvaluate
+ * Build script for: PostfixCalculator
  *
  * Created: Wed 26 Oct 15:28:08 BST 2016
  *
@@ -11,9 +11,9 @@ apply plugin: 'application'
 
 sourceCompatibility = 1.8
 version = '1.0.0'
-group = 'com.steel_eyed.NewPostfixEvaluate'
+group = 'com.steel_eyed.PostfixCalculator'
 description = "\n${name} Project\nVersion: ${version}"
-mainClassName = "com.steel_eyed.NewPostfixEvaluate.Main"
+mainClassName = "com.steel_eyed.PostfixCalculator.Main"
 
 /*
  * Use filesystem as local repositories.
@@ -60,7 +60,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'NewPostfixEvaluate',
+        attributes 'Implementation-Title': 'PostfixCalculator',
                    'Implementation-Version': version,
        		   'Main-Class': mainClassName,
        		   'Class-Path': configurations.compile.collect { it }.join(' ')
