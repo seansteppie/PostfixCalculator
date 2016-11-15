@@ -6,7 +6,7 @@ import static com.steel_eyed.PostfixCalculator.PostfixCalculator.evaluate;
 import static org.junit.Assert.assertEquals;
 
 /**
- * KataTests
+ * PostfixCalculatorTests
  * <p>
  * @author Sean Steppie
  * <p>
