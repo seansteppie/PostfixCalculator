@@ -45,4 +45,9 @@ public class PostfixCalculatorTests {
     public void test6() throws RuntimeException {
         PostfixCalculator.evaluate( "10 20 %" );
     }
+
+    @Test( expected = RuntimeException.class )
+    public void testWrongNoOfTokens() throws RuntimeException {
+        PostfixCalculator.evaluate( "10 20 * +" );
+    }
 }
