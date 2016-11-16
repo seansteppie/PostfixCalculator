@@ -27,9 +27,28 @@ import java.util.Stack;
  * @version 1.0.0        Date: 26/10/16     Initial Version
  */
 public class PostfixCalculator {
+    /**
+     * evaluate a string as a collection of operators and operands in Reverse
+     * Polish Notation.
+     * @param s space separated operator and operands
+     * @return long result of expression
+     */
     public static long evaluate( String s ) {
+        String[] tokens = s.split( "\\s+" );
+        if( tokens.length % 2 == 0 )
+            throw new RuntimeException( "Wrong number of operators/operands" );
+        return evaluate( tokens );
+    }
+
+    /**
+     * evaluate a string as a collection of operators and operands in Reverse
+     * Polish Notation.
+     * @param tokens String array of operators/operands to be evaluated.
+     * @return long result of expression
+     */
+    public static long evaluate( String[] tokens ) {
         Stack< Long > operands = new Stack<>();
-        for( String token : s.split( "\\s+" ) ) {
+        for( String token : tokens ) {
             if( token.matches( "-*\\d+" ) ) {
                 operands.push( Long.parseLong( token ) );
                 continue;
