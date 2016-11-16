@@ -3,7 +3,7 @@ package com.steel_eyed.Numeric;
 import java.util.Stack;
 
 /**
- * Numeric
+ * PostfixCalculator
  * <p>
  * Evaluate a postfix expression
  * <p>
@@ -34,7 +34,7 @@ public class PostfixCalculator {
                 operands.push( Long.parseLong( token ) );
                 continue;
             }
-            // Must be an operator
+            // Token must be an operator & there needs to be at least 2 operands on the stack
             if( operands.size() < 2 )
                 throw new RuntimeException( "Not enough operands for operator: " + token );
             long value2 = operands.pop();
