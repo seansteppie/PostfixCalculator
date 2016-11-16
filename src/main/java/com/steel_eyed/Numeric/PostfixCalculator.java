@@ -42,6 +42,9 @@ public class PostfixCalculator {
             long total = calc( value1, token, value2 );
             operands.push( total );
         }
+        // As long as we've got some operands & operators, the stack should never be zero.
+        if( operands.size() > 1 )
+            throw new RuntimeException( "Too many operands left, should be 1, got: " + operands.size() );
         return operands.pop();
     }
 
